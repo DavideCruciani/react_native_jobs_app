@@ -5,12 +5,13 @@ const useFetch = (endpoint, query) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const apiKey = process.env.EXPO_PUBLIC_API_KEY;
 
   const options = {
     method: "GET",
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      "X-RapidAPI-Key": "c5e39a3ac9msh3565004f024c3bcp12280ejsnb5b6ba5bbff8",
+      "X-RapidAPI-Key": apiKey,
       "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
     },
     params: { ...query },

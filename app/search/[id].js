@@ -17,6 +17,7 @@ import styles from "../../styles/search";
 const JobSearch = () => {
   const params = useSearchParams();
   const router = useRouter();
+  const apiKey = process.env.EXPO_PUBLIC_API_KEY;
 
   const [searchResult, setSearchResult] = useState([]);
   const [searchLoader, setSearchLoader] = useState(false);
@@ -32,8 +33,7 @@ const JobSearch = () => {
         method: "GET",
         url: `https://jsearch.p.rapidapi.com/search`,
         headers: {
-          "X-RapidAPI-Key":
-            "c5e39a3ac9msh3565004f024c3bcp12280ejsnb5b6ba5bbff8",
+          "X-RapidAPI-Key": apiKey,
           "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
         },
         params: {
