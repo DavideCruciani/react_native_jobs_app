@@ -1,1 +1,1 @@
-# React Native Jobs App
+# React Native Job search app
